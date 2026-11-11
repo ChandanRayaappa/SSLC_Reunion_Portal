@@ -3,10 +3,12 @@ import { db } from "./firebase.js";
 import {
 collection,
 getDocs,
+addDoc,
 updateDoc,
 deleteDoc,
 doc
 }
+
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 async function loadTeachers(){
@@ -62,10 +64,7 @@ updateTeacher(
 'comments',
 this.value
 )
-">
-
-
-</textarea>
+">${data.comments || ''}</textarea>
 
 </td>
 
