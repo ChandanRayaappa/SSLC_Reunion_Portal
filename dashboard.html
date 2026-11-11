@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link
+    rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("loggedIn") !== "true"){
+
+    window.location.href =
+    "index.html";
+
+}
+
+</script>
+
+<div class="page">
+
+    <h1>📊 Reunion Dashboard</h1>
+
+    <button
+    class="backBtn"
+    onclick="window.location='home.html'">
+
+    🏠 Home
+
+    </button>
+
+    <br><br>
+
+    <div class="dashboard-card">
+
+        <h3>👥 Contacts</h3>
+
+        <h2 id="contactCount">0</h2>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>👨‍🏫 Teachers</h3>
+
+        <h2 id="teacherCount">0</h2>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>🎁 Gifts</h3>
+
+        Estimated :
+        ₹ <span id="giftEstimated">0</span>
+
+        <br><br>
+
+        Actual :
+        ₹ <span id="giftActual">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>🍽 Food</h3>
+
+        Estimated :
+        ₹ <span id="foodEstimated">0</span>
+
+        <br><br>
+
+        Actual :
+        ₹ <span id="foodActual">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>🎈 Decoration</h3>
+
+        Estimated :
+        ₹ <span id="decorationEstimated">0</span>
+
+        <br><br>
+
+        Actual :
+        ₹ <span id="decorationActual">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>💰 Grand Total</h3>
+
+        Estimated :
+        ₹ <span id="grandEstimated">0</span>
+
+        <br><br>
+
+        Actual :
+        ₹ <span id="grandActual">0</span>
+
+        <br><br>
+
+        Remaining :
+        ₹ <span id="grandBalance">0</span>
+
+    </div>
+
+    <br><br>
+
+    <div class="dashboard-card">
+
+        <h2>📈 Estimated vs Actual</h2>
+
+        <canvas
+        id="expenseChart">
+
+        </canvas>
+
+    </div>
+
+    <br>
+
+    <div class="dashboard-card">
+
+        <h2>🥧 Expense Distribution</h2>
+
+        <canvas
+        id="expensePie">
+
+        </canvas>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script
+type="module"
+src="dashboard.js">
+</script>
+
+</body>
+
+</html>

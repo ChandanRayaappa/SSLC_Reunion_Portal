@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gift Planning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href = "index.html";
+}
+</script>
+
+<div class="page">
+
+    <h1>🎁 Gift Planning</h1>
+
+    <button
+        class="backBtn"
+        onclick="goHome()">
+        🏠 Back to Home
+    </button>
+
+    <br><br>
+
+    <button
+        id="addGiftBtn"
+        class="addBtn"
+        onclick="showGiftForm()">
+
+        ➕ Add Gift Item
+
+    </button>
+
+    <div
+        id="giftForm"
+        class="hidden">
+
+        <input
+            type="number"
+            id="giftSlNo"
+            placeholder="Sl No">
+
+        <input
+            type="text"
+            id="giftName"
+            placeholder="Gift Name">
+
+        <button onclick="addGift()">
+            Save Gift
+        </button>
+
+        <button
+            class="cancelBtn"
+            onclick="hideGiftForm()">
+            Cancel
+        </button>
+
+    </div>
+
+    <br><br>
+
+    <table class="gift-table">
+
+        <thead>
+
+            <tr>
+                <th>Sl No</th>
+                <th>Item Name</th>
+                <th>Status</th>
+                <th>Estimated Cost</th>
+                <th>Actual Cost</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="giftTable">
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <h3>
+        Total Estimated :
+        <span id="totalEstimated">
+            ₹ 0
+        </span>
+    </h3>
+
+    <h3>
+        Total Actual :
+        <span id="totalActual">
+            ₹ 0
+        </span>
+    </h3>
+
+</div>
+
+<script>
+
+function goHome(){
+
+    window.location.href =
+    "home.html";
+
+}
+
+</script>
+
+<script
+type="module"
+src="gifts.js">
+</script>
+
+</body>
+
+</html>

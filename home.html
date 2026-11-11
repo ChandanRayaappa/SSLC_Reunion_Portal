@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Home</title>
+
+<link
+rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href="index.html";
+}
+
+</script>
+
+<div class="page">
+
+<h1>🎓 SSLC Friends Directory</h1>
+<h2 id="welcomeUser"></h2>
+<script>
+
+document.getElementById(
+    "welcomeUser"
+).innerText =
+"Welcome " +
+localStorage.getItem(
+"loggedUser"
+);
+
+</script>
+
+<img
+src="school-photo.jpg"
+class="banner">
+
+<div class="menu">
+
+<a href="contacts.html">📞 Contacts</a>
+
+<a href="teachers.html">👨‍🏫 Teachers</a>
+
+<a href="gifts.html">🎁 Gift Planning</a>
+
+<a href="food.html">🍽 Food Planning</a>
+
+<a href="decoration.html">🎈 Decoration</a>
+
+<a href="stage.html">🎭 Stage Function</a>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+</div>
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<script>
+
+function logout(){
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    localStorage.removeItem(
+        "loggedUser"
+    );
+
+    localStorage.removeItem(
+        "isAdmin"
+    );
+
+    window.location.href =
+        "index.html";
+}
+
+</script>
+</body>
+
+</html>

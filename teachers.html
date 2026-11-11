@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teachers List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href="index.html";
+}
+</script>
+
+<div class="page">
+
+    <h1>👨‍🏫 Teachers List</h1>
+
+   <button
+    class="backBtn"
+    onclick="goHome()">
+    🏠 Back to Home
+</button>
+
+    <br><br>
+
+    <table class="gift-table">
+
+        <thead>
+            <tr>
+               <th>Sl No</th>
+<th>Teacher Name</th>
+<th>Phone Number</th>
+<th>Responsible For Call</th>
+<th>Comments</th>
+<th>Action</th>
+            </tr>
+        </thead>
+
+  <tbody id="teacherTable">
+
+</tbody>
+
+
+    </table>
+
+</div>
+
+<button
+    class="addBtn"
+    onclick="showTeacherForm()">
+
+    ➕ Add Teacher
+
+</button>
+
+<div
+    id="teacherForm"
+    class="hidden">
+
+    <input
+        type="text"
+        id="teacherName"
+        placeholder="Teacher Name">
+
+    <input
+        type="text"
+        id="teacherResponsible"
+        placeholder="Responsible Person">
+
+    <textarea
+        id="teacherComments"
+        placeholder="Comments">
+    </textarea>
+
+    <button onclick="addTeacher()">
+
+        Save Teacher
+
+    </button>
+
+    <button
+        class="cancelBtn"
+        onclick="hideTeacherForm()">
+
+        Cancel
+
+    </button>
+
+</div>
+<script>
+
+function goHome(){
+
+    window.location.href =
+    "home.html";
+
+}
+
+</script>
+<script type="module" src="teachers.js"></script>
+</body>
+</html>
