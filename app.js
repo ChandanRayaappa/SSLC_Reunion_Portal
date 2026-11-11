@@ -68,15 +68,20 @@ const defaultMembers = [
 ];
 
 
-let members =
-JSON.parse(localStorage.getItem("members")) ||
-defaultMembers;
+// Always use latest member list
+
+let members = [...defaultMembers];
 
 members = members.filter(
     (member,index,self)=>
     index === self.findIndex(
         m => m.phone === member.phone
     )
+);
+
+localStorage.setItem(
+    "members",
+    JSON.stringify(members)
 );
 
 saveData();
@@ -148,35 +153,52 @@ function memberLogin() {
         .trim();
 
     const found = members.find(member =>
-        member.name.toLowerCase() === name &&
-        member.phone === phone
+
+        member.name
+        .trim()
+        .toLowerCase() ===
+        name
+
+        &&
+
+        member.phone
+        .trim() ===
+        phone
+
     );
 
-   if (found) {
+    if(found){
 
-    localStorage.setItem(
-        "loggedIn",
-        "true"
-    );
+        localStorage.setItem(
+            "loggedIn",
+            "true"
+        );
 
-    localStorage.setItem(
-        "loggedUser",
-        found.name
-    );
+        localStorage.setItem(
+            "loggedUser",
+            found.name
+        );
 
-    window.location.href =
-        "home.html";
+        localStorage.setItem(
+            "isAdmin",
+            "false"
+        );
 
-} else {
+        window.location.href =
+            "home.html";
+
+    }else{
 
         document
-            .getElementById("loginMessage")
-            .textContent =
-            "Invalid Name or Phone Number";
+        .getElementById(
+            "loginMessage"
+        )
+        .textContent =
+        "Invalid Name or Phone Number";
 
     }
-}
 
+}
 function renderTable() {
 
     let html = "";
