@@ -57,7 +57,7 @@ const defaultMembers = [
 {name:"Prasad",phone:"7676081596"},
 {name:"Dileep",phone:"9108686589"},
 {name:"RajaShekara",phone:"7353127154"},
-{name:"Punith Raj",phone:"9964975716"},
+{name:"Puneethraj",phone:"9964975716"},
 {name:"Ganesha",phone:"9902436208"},
 {name:"Aswath",phone:"7337767419"},
 {name:"Akelesha",phone:"8970284438"},
